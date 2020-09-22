@@ -320,7 +320,7 @@
                 UTIL.addEvent( image, 'error', imgTrigger ); // handle broken url-s
 
                 // load event is not fired for cached images, force the load event
-                image.src += ( ( image.src.indexOf( '?' ) > 0)? '&': '?' ) + new Date().getTime();
+               // image.src += ( ( image.src.indexOf( '?' ) > 0)? '&': '?' ) + new Date().getTime();
             }
             else {
                 imgTrigger();
@@ -2065,6 +2065,7 @@
         make: function( configArray ) {
 
             var i = configArray.length, node;
+            this.index = 0;
 
             this.jsonStructure = {
                 chart: null,
@@ -2134,14 +2135,14 @@
             }
         },
 
-        getID: (
-            function() {
-                var i = 1;
-                return function() {
-                    return i++;
-                };
-            }
-        )()
+        getID: (function() {
+			console.log("--------------------------->")
+			var i = 0;
+			return function() {
+				console.log(this.index,"1111111111");
+				return this.index++;
+			};
+		})()
     };
 
     /**
