@@ -14,3 +14,5 @@ It relies on Raphael for handling SVG and animations.
 
 For Docs, Examples, and everything else see:
 http://fperucic.github.io/treant-js
+
+wohoo now you can clone into your project
